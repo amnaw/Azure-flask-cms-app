@@ -60,14 +60,18 @@ def post(id):
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
+    app.logger.warning("************** info : start log-in  **************")
     if current_user.is_authenticated:
         return redirect(url_for('home'))
     form = LoginForm()
+    app.logger.warning("************** info : log-in form  **************")
     if form.validate_on_submit():
         user = User.query.filter_by(username=form.username.data).first()
         if user is None or not user.check_password(form.password.data):
+            app.logger.error("************** login error : Invalid username or password  **************")
             flash('Invalid username or password')
             return redirect(url_for('login'))
+        app.logger.warning("************** login : successful log-in attempt, username : admin **************")
         login_user(user, remember=form.remember_me.data)
         next_page = request.args.get('next')
         if not next_page or url_parse(next_page).netloc != '':
@@ -111,7 +115,7 @@ def authorized():
         _save_cache(cache)
 
         # log successful log-in
-        app.logger.info("************** info : successful log-in attempt, username : admin **************")
+        app.logger.warning("************** info : successful log-in attempt, username : admin **************")
 
     return redirect(url_for('home'))
 
