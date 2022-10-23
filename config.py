@@ -4,8 +4,8 @@ basedir = os.path.abspath(os.path.dirname(__file__))
 class Config(object):
     SECRET_KEY = os.environ.get('SECRET_KEY') or 'secret-key'
 
-    BLOB_ACCOUNT = os.environ.get('BLOB_ACCOUNT') or 'cmsamna'
-    BLOB_STORAGE_KEY = os.environ.get('BLOB_STORAGE_KEY') or 'TH284184qdu6GCXGgDvvwBGg9958K/4SB92IKWEOJqJRwOLleKypr6XGvHTLg14EuzsOjmw6lO96+ASt2UwrqQ=='
+    BLOB_ACCOUNT = os.environ.get('BLOB_ACCOUNT') or 'newamnacms'
+    BLOB_STORAGE_KEY = os.environ.get('BLOB_STORAGE_KEY') or 'SOMD1pUp7B2wMfQd5BXYZisLEeu1ODhWxEC+kZwi+PQwGbaGsNEZxClyfT/IYG5PeFlmFFxR5cy9+ASt0b6YZQ=='
     BLOB_CONTAINER = os.environ.get('BLOB_CONTAINER') or 'images'
 
     SQL_SERVER = os.environ.get('SQL_SERVER') or 'new-amna-cms.database.windows.net'
