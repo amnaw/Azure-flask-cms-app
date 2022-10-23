@@ -8,8 +8,8 @@ class Config(object):
     BLOB_STORAGE_KEY = os.environ.get('BLOB_STORAGE_KEY') or 'TH284184qdu6GCXGgDvvwBGg9958K/4SB92IKWEOJqJRwOLleKypr6XGvHTLg14EuzsOjmw6lO96+ASt2UwrqQ=='
     BLOB_CONTAINER = os.environ.get('BLOB_CONTAINER') or 'images'
 
-    SQL_SERVER = os.environ.get('SQL_SERVER') or 'v-good-server.database.windows.net'
-    SQL_DATABASE = os.environ.get('SQL_DATABASE') or 'ex-cms-db'
+    SQL_SERVER = os.environ.get('SQL_SERVER') or 'new-amna-cms.database.windows.net'
+    SQL_DATABASE = os.environ.get('SQL_DATABASE') or 'new-amna-cms'
     SQL_USER_NAME = os.environ.get('SQL_USER_NAME') or 'amnaadmin'
     SQL_PASSWORD = os.environ.get('SQL_PASSWORD') or 'p@ssword1234'
     SQLALCHEMY_DATABASE_URI = 'mssql+pyodbc://' + SQL_USER_NAME + '@' + SQL_SERVER + ':' + SQL_PASSWORD + '@' + SQL_SERVER + ':1433/' + SQL_DATABASE + '?driver=ODBC+Driver+17+for+SQL+Server'
